@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TreeView from './TreeView';
+
+
+const tree = {
+  root: "Full Stack Dev",
+  data: [
+    { name: "Frontend", data: [{ name: "Basics" , data: [{ name: "HTML" },{ name: "CSS"},{ name: "JS"}]}, { name: "Frameworks", data: [{ name: "React" },{ name: "Angular" },{ name: "Vue" }] }, { name: "Styles", data: [{ name: "Bootstrap" },{ name: "MaterialUI" }] }] },
+    { name: "Backend", data: [{ name: "Technologies", data: [{ name: "php" }, { name: "Node" }, { name: 'Java'}] }] },
+    { name: 'Database' , data : [ {name: 'Mysql'}, {name: 'MongoDB'}]},
+    { name: 'Devops' , data : [ {name: 'AWS'}, {name: 'Docker'}, {name: 'Automation', data : [{name: 'Jenkins'}, {name: 'Big Bucket'}]}]},
+  ]
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TreeView index={0} data={tree.data} name={tree.root} />
     </div>
   );
 }
